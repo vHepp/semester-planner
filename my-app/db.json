@@ -1,0 +1,52 @@
+{
+	"todos": [
+		{
+			"id": 1,
+			"title": "Team Meeting",
+			"completed": false
+		},
+		{
+			"id": 2,
+			"title": "Search for Grants/Scholarships",
+			"completed": false
+		},
+		{
+			"id": 3,
+			"title": "Work on Application",
+			"completed": false
+		},
+		{
+			"id": 4,
+			"title": "Letter of recommendation",
+			"completed": false
+		}
+	],
+	"courses": [
+		{
+			"id": 1,
+			"title": "MATH 1513",
+			"prereqs": []
+		},
+		{
+			"id": 2,
+			"title": "CSIS 2610",
+			"prereqs": [
+				"MATH 1513"
+			]
+		},
+		{
+			"id": 3,
+			"title": "CSIS 3700",
+			"prereqs": [
+				"CSIS 2610"
+			]
+		},
+		{
+			"id": 4,
+			"title": "CSIS 3701",
+			"prereqs": [
+				"CSIS 2610"
+			]
+		}
+	]
+}
