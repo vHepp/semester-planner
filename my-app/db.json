@@ -1,52 +1,85 @@
 {
 	"todos": [
 		{
-			"id": 1,
+			"id": 0,
 			"title": "Team Meeting",
 			"completed": false
 		},
 		{
-			"id": 2,
+			"id": 1,
 			"title": "Search for Grants/Scholarships",
 			"completed": false
 		},
 		{
-			"id": 3,
+			"id": 2,
 			"title": "Work on Application",
 			"completed": false
 		},
 		{
-			"id": 4,
+			"id": 3,
 			"title": "Letter of recommendation",
 			"completed": false
 		}
 	],
-	"courses": [
-		{
-			"id": 1,
-			"title": "MATH 1513",
-			"prereqs": []
+	"semester_planner": {
+		"courses": {
+			"MATH 1513": {
+				"id": 1,
+				"prereqs": []
+			},
+			"CSIS 2610": {
+				"id": 2,
+				"prereqs": [
+					"MATH 1513"
+				]
+			},
+			"CSIS 3700": {
+				"id": 3,
+				"prereqs": [
+					"CSIS 2610"
+				]
+			},
+			"CSIS 3701": {
+				"id": 4,
+				"prereqs": [
+					"CSIS 2610"
+				]
+			}
 		},
-		{
-			"id": 2,
-			"title": "CSIS 2610",
-			"prereqs": [
-				"MATH 1513"
-			]
-		},
-		{
-			"id": 3,
-			"title": "CSIS 3700",
-			"prereqs": [
-				"CSIS 2610"
-			]
-		},
-		{
-			"id": 4,
-			"title": "CSIS 3701",
-			"prereqs": [
-				"CSIS 2610"
-			]
+		"semesters": {
+			"all-courses": {
+				"id": "all-courses",
+				"title": "All Courses",
+				"courses": [
+					{
+						"id": 0,
+						"title": "MATH 1513"
+					},
+					{
+						"id": 1,
+						"title": "CSIS 2610"
+					},
+					{
+						"id": 2,
+						"title": "CSIS 3700"
+					}
+				]
+			},
+			"fall-1": {
+				"id": "fall-1",
+				"title": "Fall 1",
+				"courses": []
+			},
+			"spring-1": {
+				"id": "spring-1",
+				"title": "Spring 1",
+				"courses": [
+					{
+						"id": 4,
+						"title": "CSIS 3701"
+					}
+				]
+			}
 		}
-	]
+	}
 }

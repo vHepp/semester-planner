@@ -1,23 +1,45 @@
-async function fetchData() {
+'use client'
 
-	const res = await fetch('http://localhost:3000/api/todoItem', { method: "GET" })
+import React, { useEffect, useState } from "react";
 
-	const data = res.json()
+const Page = () => {
 
-	console.log(data)
+	const [state, setState] = useState(null);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(true);
 
-	return data
-}
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const res = await fetch('http://localhost:3000/api/todoItem') //, { method: "GET" })
+				const data = await res.json()
+				// console.log(data)
+				setState(data)
+				setLoading(false)
 
-const Page = async () => {
+				console.log("fetched todos")
+			}
+			catch (error) {
+				setError(error)
+				setLoading(false)
+			}
+		}
 
-	const tasks = await fetchData()
+		fetchData()
+	}, [])
+
+	if (loading) {
+		return <div>Loading...</div>
+	}
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
 
 	return (
 		<div>
 			<h1>Todo Item</h1>
 			<ul>
-				{tasks.map((task) => (
+				{state.map((task) => (
 					<li key={task.id}> {task.id} {task.title} </li>
 				))}
 			</ul>
